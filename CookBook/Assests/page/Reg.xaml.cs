@@ -30,7 +30,7 @@ namespace CookBook.Assests.page
 
         private void BtnEnter_Click(object sender, RoutedEventArgs e)
         {
-            if (TbLogin.Text == "" || TbNickname.Text == "" || TbPassword.Password == "")
+            if (TbLogin.Text == "" || TbNickname.Text == "" || TbPassword.Password == "" || TbLogin.Text == "Login" || TbNickname.Text == "Nikname")
             {
                 TbInvalid.Visibility = Visibility.Visible;
                 TbLogin.BorderThickness = new Thickness(1);
@@ -46,6 +46,7 @@ namespace CookBook.Assests.page
                 user.Nickname = TbNickname.Text;
                 AppData.Context.User.Add(user);
                 AppData.Context.SaveChanges();
+                ((MainWindow)System.Windows.Application.Current.MainWindow).frame.Content = new Auth();
             }
         
         }

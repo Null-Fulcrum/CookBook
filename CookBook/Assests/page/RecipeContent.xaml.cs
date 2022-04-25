@@ -123,6 +123,7 @@ namespace CookBook.Assests.page
                     break;
                 case "Delete":
                     AppData.Context.Recipe.Remove(currentrecipe as Recipe);
+                    AppData.Context.SaveChanges();
                     ((MainWindow)System.Windows.Application.Current.MainWindow).frame.Content = new RecipeList();
                     break;
                 case "Edit":
