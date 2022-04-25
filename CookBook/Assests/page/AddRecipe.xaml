@@ -1,0 +1,73 @@
+﻿<Page x:Class="CookBook.Assests.page.AddRecipe"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CookBook.Assests.page"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="1000"
+      Title="AddRecipe">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="15*"/>
+                <RowDefinition Height="15*"/>
+                <RowDefinition Height="190*"/>
+                <RowDefinition Height="30*"/>
+
+            </Grid.RowDefinitions>
+
+
+            <TextBox x:Name="titles" Style="{DynamicResource TextBoxStyle}" BorderThickness="0" GotFocus="Text_GotFocus" LostFocus="Text_LostFocus" Tag="title" Background="{x:Null}" Text="Add title for the recipe" Foreground="Gray" FontSize="24px" VerticalAlignment="Center" Margin="20 0 0 0"></TextBox>
+            <ComboBox x:Name="combobox" Grid.Row="1" Width="150" Height="25" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="20 0 0 0"/>
+            <StackPanel Grid.Row="2">
+                <StackPanel x:Name="instructionlist" HorizontalAlignment="Left"  Margin="20 0 20 0">
+
+
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <Button Style="{DynamicResource ButtonStyleNonRounded}" Click="Button_Click" Content="Add instruction" Width="100" BorderThickness="0" Background="{x:Null}" Foreground="Gray" Margin="0 0 10 0"/>
+                    <Button Style="{DynamicResource ButtonStyleNonRounded}" Click="Button_Click" Content="Remove last instruction" Width="130" BorderThickness="0" Background="{x:Null}" Foreground="Gray"/>
+                </StackPanel>
+            </StackPanel>
+
+            <StackPanel Grid.Row="3" Orientation="Horizontal" VerticalAlignment="Center" Margin="20 0 0 0">
+                <Button Content="Create" BorderBrush="#ffa403" Click="Button_Click" Width="100" Foreground="White" FontSize="20" Background="#ffa403" Style="{DynamicResource ButtonStyle}" Margin="0 0 10 0"/>
+                <Button Content="Cancel" Foreground="Gray" Click="Button_Click" BorderBrush="{x:Null}" FontSize="20" Background="{x:Null}" Style="{DynamicResource ButtonStyleNonRounded}"/>
+            </StackPanel>
+        </Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Border Background="Gray">
+                <Grid>
+                    <Image x:Name="image"  Width="700" HorizontalAlignment="Center" Stretch="Fill"/>
+                    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <Button Content="Upload Image" Style="{DynamicResource ButtonStyleNonRounded}" Click="Button_Click"/>
+                    </StackPanel>
+            
+                </Grid>
+            </Border>
+            <Line Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Right" Y1="0" Y2="660" Stroke="Gray" Height="660" Width="1"/>
+            <StackPanel Grid.Column="1"  VerticalAlignment="Center" HorizontalAlignment="Left">
+                <StackPanel x:Name="ingridientlist"  Margin="20 0" >
+
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <Button Style="{DynamicResource ButtonStyleNonRounded}" Click="Button_Click" Content="Add ingridient" Width="100" BorderThickness="0" Background="{x:Null}" Foreground="Gray" Margin="0 0 10 0"/>
+                    <Button Style="{DynamicResource ButtonStyleNonRounded}" Click="Button_Click" Content="Remove last ingridient" Width="130" BorderThickness="0" Background="{x:Null}" Foreground="Gray"/>
+                </StackPanel>
+            </StackPanel>
+
+
+        </Grid>
+    </Grid>
+</Page>

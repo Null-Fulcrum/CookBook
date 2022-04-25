@@ -1,0 +1,51 @@
+﻿<Page x:Class="CookBook.Assests.page.Auth"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CookBook.Assests.page"
+      mc:Ignorable="d" 
+      d:DesignHeight="660" d:DesignWidth="1000"
+      Title="Auth">
+    <Page.Resources>
+    
+
+    </Page.Resources>
+    <Grid>
+
+        <Border CornerRadius="0 0 20 20">
+            <Border.Background>
+                <ImageBrush ImageSource="/Assests/images/AuthBackground.jpg"/>
+            </Border.Background>
+        </Border>
+        <Border Background="#A52A2828" CornerRadius="0 0 20 20"/>
+        <Border Background="#333232" BorderBrush="#625D5D"  BorderThickness="1" Width="320" Height="400" CornerRadius="10">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Label Content="Authorization" FontSize="20" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10" Grid.Row="0"/>
+                <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0 0 0 10" Foreground="red" FontSize="15" Visibility="Collapsed" x:Name="TbInvalid">Invalid login or password</TextBlock>
+                <StackPanel Grid.Row="1">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 0 0 27">
+                        <Image Source="/Assests/images/user.png" Width="24" Height="24" Margin="0 0 4 0"/>
+                        <TextBox Width="175"  VerticalContentAlignment="Center" x:Name="TbLogin" BorderBrush="red" Height="24" Style="{DynamicResource TextBoxStyle}" Foreground="White" FontSize="15" Background="#5C5C5C" BorderThickness="0" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Image Source="/Assests/images/password.png" Width="24" Height="24" Margin="0 0 4 0"/>
+                        <PasswordBox Width="175" VerticalContentAlignment="Center" x:Name="TbPassword" Height="24" BorderBrush="red"  Foreground="White" FontSize="15" Background="#5C5C5C" BorderThickness="0" Style="{DynamicResource PasswordBoxStyle}"/>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel  Grid.Row="2">
+                    <Button Style="{DynamicResource ButtonStyle}" x:Name="BtnEnter" Click="BtnEnter_Click" Width="175" Height="40"
+                        VerticalAlignment="Top" Background="#FAA403" Content="Enter" Foreground="White" FontSize="20"/>
+                    <TextBlock Foreground="White" FontSize="10" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 20 0 0">Don`t have an account?</TextBlock>
+                    <TextBlock HorizontalAlignment="Center" FontSize="10"><Hyperlink Click="Hyperlink_Click" TextDecorations="None" Foreground="#FAA403">Registration</Hyperlink></TextBlock>
+                </StackPanel>
+
+            </Grid>
+        </Border>
+    </Grid>
+</Page>

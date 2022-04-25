@@ -1,0 +1,56 @@
+﻿<Page x:Class="CookBook.Assests.page.RecipeContent"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CookBook.Assests.page"
+      mc:Ignorable="d" 
+      d:DesignHeight="660" d:DesignWidth="1000"
+      Title="RecipeContent">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="15*"/>
+                <RowDefinition Height="15*"/>
+                <RowDefinition Height="190*"/>
+
+            </Grid.RowDefinitions>
+            <StackPanel HorizontalAlignment="Left" Orientation="Horizontal" VerticalAlignment="Center" Margin="20 0">
+                <Image Source="/Assests/images/arrowleft.png" Width="10" Margin="0 0 10 0"/>
+                <Button Content="Back" Style="{DynamicResource ButtonStyle}" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#faa403"/>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Right" VerticalAlignment="Center" Orientation="Horizontal" Margin="20 0">
+                <Image Source="/Assests/images/trash.png" Width="20" Margin="0 0 5 0"/>
+                <Button Content="Delete" Style="{DynamicResource ButtonStyle}" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#faa403" Margin="0 0 10 0"/>
+                <Image Source="/Assests/images/pencil.png" Width="20" Margin="0 0 5 0"/>
+                <Button Content="Edit" Style="{DynamicResource ButtonStyle}" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#faa403"/>
+            </StackPanel>
+            <TextBlock x:Name="TbTitle" Foreground="White" FontSize="20" Margin="20 0 20 0" TextWrapping="Wrap" Grid.Row="1"/>
+           
+                <StackPanel x:Name="instructionlist" Grid.Row="2" Margin="20 0 20 0">
+                    
+
+                </StackPanel>
+
+        </Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+           
+            <Border Background="Gray"/>
+            <Image x:Name="image"  Width="700" HorizontalAlignment="Center" Stretch="Fill"/>
+            <Line Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Right" Y1="0" Y2="660" Stroke="Gray" Height="660" Width="1"/>
+            <StackPanel x:Name="ingridientlist" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="20 0" >
+             
+            </StackPanel>
+
+        </Grid>
+    </Grid>
+</Page>
